@@ -21,7 +21,7 @@ sudo docker info                           # Get the Information about the docke
 sudo docker images                         # List down the docker images
 sudo docker ps                             # List running containers
 sudo docker ps -a                          # List down all containers with status
-sudo docker run <image_name>               # Run the docker image
+sudo docker run <image_name/image_id>      # Run the docker image
 sudo docker rmi <image_id>                 # Remove the docker image
 sudo docker run -it ubuntu                 # Start linux terminal interactive mode
 sudo docker start <image_id>               # Start the container
@@ -29,7 +29,7 @@ sudo docker stats                          # Memory, CPU etc Live Usage
 sudo docker system df                      # Disk Usage 
 sudo docker system prun                    # Delete Non running images
 sudo docker inspect <image_name/id>        # Details of Image
-
-
-
+docker build -t my_image1:1.0 .            # Buid the image from docker file with name Dockerfile
+apt install docker-compose                 # Install Docker Compose
+docker-compose -v                          # Docker Compose Version
 ```
