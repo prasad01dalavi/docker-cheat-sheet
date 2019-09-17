@@ -10,6 +10,9 @@ docker --version
 
 # Run first docker image (if not present then it is downloaded and run):
 sudo docker run hello-world
+
+apt install docker-compose                 # Install Docker Compose
+docker-compose -v                          # Docker Compose Version
 ```
 
 ## Commands
@@ -35,6 +38,5 @@ sudo docker system df                      # Disk Usage
 sudo docker system prun                    # Delete Non running images
 sudo docker inspect <image_name/id>        # Details of Image
 docker build -t my_image1:1.0 .            # Buid the image from docker file with name Dockerfile
-apt install docker-compose                 # Install Docker Compose
-docker-compose -v                          # Docker Compose Version
+docker network ls                          # Network and Drivers list
 ```
