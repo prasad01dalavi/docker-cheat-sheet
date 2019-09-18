@@ -29,14 +29,22 @@ sudo docker run <image_name/image_id>               # Run the docker image
 sudo docker rmi <image_id>                          # Remove the docker image (-f for forcefully delete)
 docker rm $(docker ps -a -q)                        # Remove all docker containers
 sudo docker run -it ubuntu                          # Start linux terminal interactive mode
+docker exec -it <cotainer_id> bash                  # Log In into container
 
 sudo docker start <image_id>                        # Start the container
 sudo docker start <first 2-digits of container_id>  # start the container
 
-sudo docker stats                          # Memory, CPU etc Live Usage
-sudo docker system df                      # Disk Usage 
-sudo docker system prun                    # Delete Non running images
-sudo docker inspect <image_name/id>        # Details of Image
-docker build -t my_image1:1.0 .            # Buid the image from docker file with name Dockerfile
-docker network ls                          # Network and Drivers list
+sudo docker stats                                   # Memory, CPU etc Live Usage
+sudo docker system df                               # Disk Usage 
+sudo docker system prun                             # Delete Non running images
+sudo docker inspect <image_name/id>                 # Details of Image
+docker build -t my_image1:1.0 .                     # Buid the image from docker file with name Dockerfile
+docker network ls                                   # Network and Drivers list
+
+docker login                                        # Login to Docker Hub Account
+docker commit <container_id> prasad01dalavi/flask-server  # commit (save) the (new) image
+docker push prasad01dalavi/flask-server             # Push the image on Docker Hub
+
+
+
 ```
