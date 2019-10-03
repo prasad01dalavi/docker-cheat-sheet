@@ -44,6 +44,7 @@ docker network ls                                   # Network and Drivers list
 docker login                                        # Login to Docker Hub Account
 docker commit <container_id> prasad01dalavi/flask-server  # commit (save) the (new) image
 docker push prasad01dalavi/flask-server             # Push the image on Docker Hub
+docker image pull prasad01dalavi/flask-server       # Pull(download) the image locally
 
 
 
