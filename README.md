@@ -8,6 +8,9 @@ sudo apt-get install docker.io
 # Verify Installation:
 docker --version
 
+# User docker cmd without sudo
+sudo usermod -a -G docker <username>       # and then restart
+
 # Run first docker image (if not present then it is downloaded and run):
 sudo docker run hello-world
 
