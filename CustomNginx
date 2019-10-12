@@ -1,0 +1,6 @@
+FROM nginx:alpine
+
+# RUN command is used to ovewrite the contents
+RUN echo "<h1>Hey, Hello Docker of Nginx!<h1>" > /usr/share/nginx/html/index.html
+
+# Note: > above indicates the string will be written into the file index.html

@@ -1,0 +1,8 @@
+FROM nginx:alpine
+
+# Download the zip file, rename it to code and save in ../html/
+ADD https://github.com/mdn/beginner-html-site-styled/archive/gh-pages.zip /usr/share/nginx/html/code.zip
+
+# Go to ../html/ and Unzip the code.zip and extract the contents to ../html/ 
+RUN cd /usr/share/nginx/html && unzip code.zip && mv beginner-html-site-styled-gh-pages/* /usr/share/nginx/html/
+
