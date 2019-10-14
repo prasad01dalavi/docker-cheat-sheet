@@ -66,4 +66,7 @@ docker image pull prasad01dalavi/flask-server       # Pull(download) the image l
 - LABEL: To provide metadata for the dockerfile
 - WORKDIR: Declare/Create the working directory
 
-### 
+### Dockerfile4
+- RUN useradd: Adding new user
+- USER: Chaging User permissions
+- ARG: Provide arguments while building an image
