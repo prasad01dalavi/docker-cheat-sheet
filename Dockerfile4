@@ -43,5 +43,9 @@ RUN rm env.html
 # Now to make the apache server working change the user back to root
 USER root
 
+# Copyt the content of current dir of system to the current dir of image
+COPY . .
+# Note: The files mentioned in .dockerignore will be ignored while copying
+
 # Start the Apache Server (Now I will not be able to load env.html)
 CMD apachectl -DFOREGROUND

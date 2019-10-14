@@ -1,6 +1,13 @@
 FROM nginx:alpine
 
+ENV webfile /usr/share/nginx/html/index.html 
+
 # RUN command is used to ovewrite the contents
-RUN echo "<h1>Hey, Hello Docker of Nginx!<h1>" > /usr/share/nginx/html/index.html
+RUN \
+    echo "RUN Command #1" > /usr/share/nginx/html/index.html && \
+    echo "RUN Command #2" >> /usr/share/nginx/html/index.html && \
+    echo "RUN Command #3" >> /usr/share/nginx/html/index.html
+# To run the multiple commands use back slash \
 
 # Note: > above indicates the string will be written into the file index.html
+#       >> means appending
