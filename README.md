@@ -1,5 +1,12 @@
 # Docker Tutorial
 
+## Best Practices
+- One service per container
+- Build Context should be small
+- Avoid unnecessary packages
+- Less Layers
+
+
 ## Installation (Ubuntu)
 ```
 # Install Docker on Ubuntu 16.04 LTS
