@@ -1,0 +1,47 @@
+FROM centos
+
+# Default argument will be myuser
+ARG user=myuser
+
+ARG myarg=this_is_my_one_argument
+
+# Install necessary packages
+RUN yum install -y unzip httpd
+
+# Declare (change directory to) the working directory
+WORKDIR /var/www/html/
+
+# Download the zip file, rename it to code and save in ../html/
+ADD https://github.com/mdn/beginner-html-site-styled/archive/gh-pages.zip /var/www/html/code.zip
+
+# Unzip the code.zip and extract the contents  
+RUN unzip code.zip && mv beginner-html-site-styled-gh-pages/* .
+
+# Create an environment variable
+ENV MYVAR Hey! This is my variable.
+
+# Save the MYVAR contents to env.html file
+RUN echo $MYVAR > env.html
+
+# Save the current user information in user.html
+RUN echo $myarg > arg.html
+
+# If I want to delete the env.html, I have to change the permissions of the file to myuser
+# As I do not wish to delete it by using sudo but learn how to change the user
+# Therefore, Lets create a new user called myuser
+RUN useradd $user
+
+# make myuser the owner of all contents of html/
+RUN chown $user:$user /var/www/html -R 
+
+# Switch the user from root to myuser to delete the env.html
+USER $user
+
+# Remove the env.html
+RUN rm env.html
+
+# Now to make the apache server working change the user back to root
+USER root
+
+# Start the Apache Server (Now I will not be able to load env.html)
+CMD apachectl -DFOREGROUND

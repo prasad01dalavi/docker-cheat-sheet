@@ -1,0 +1,17 @@
+FROM nginx:alpine
+
+# Label contains the metadata like below
+LABEL maintainer=Prasad
+
+# Download the zip file, rename it to code and save in ../html/
+ADD https://github.com/mdn/beginner-html-site-styled/archive/gh-pages.zip /usr/share/nginx/html/code.zip
+
+# Declare (change directory to) the working directory
+WORKDIR /usr/share/nginx/html
+
+# Go to ../html/ and Unzip the code.zip and extract the contents to ../html/ 
+RUN unzip code.zip && mv beginner-html-site-styled-gh-pages/* .
+
+# Create an environment variable
+ENV MYVAR Hey! This is my variable.
+RUN echo $MYVAR > env.html
