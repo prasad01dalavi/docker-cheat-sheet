@@ -1,6 +1,6 @@
 # Docker Tutorial
 
-## Installation (Ubuntu):
+## Installation (Ubuntu)
 ```
 # Install Docker on Ubuntu 16.04 LTS
 sudo apt-get install docker.io
@@ -18,7 +18,7 @@ apt install docker-compose                 # Install Docker Compose
 docker-compose -v                          # Docker Compose Version
 ```
 
-## Commands:
+## Commands
 
 ```
 sudo service docker start                           # To start the docker
@@ -55,18 +55,18 @@ docker push prasad01dalavi/flask-server             # Push the image on Docker H
 docker image pull prasad01dalavi/flask-server       # Pull(download) the image locally
 
 ```
-### Dockerfile1:
+### Dockerfile1
 - Simple Nginx Server which overwrite the contents of default index file
 
-### Dockerfile2:
+### Dockerfile2
 - ADD: To download contents from the Internet
 - ENV: How to set environment variables and use them further
 
-### Dockerfile3:
+### Dockerfile3
 - LABEL: To provide metadata for the dockerfile
 - WORKDIR: Declare/Create the working directory
 
-### Dockerfile4:
+### Dockerfile4
 - RUN useradd: Adding new user
 - USER: Chaging User permissions
 - ARG: Provide arguments while building an image
