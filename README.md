@@ -42,7 +42,11 @@ sudo docker system df                               # Disk Usage
 sudo docker system prun                             # Delete Non running images
 sudo docker inspect <image_name/id>                 # Details of Image
 docker build -t my_image1:1.0 .                     # Buid the image from docker file with name Dockerfile
-docker build -t my_image2:my_tag -f Dockerfile2 .   # default tag is latest, -f is used to specify the dockerfile
+docker build -t my_image2:my_tag -f Dockerfile2 .   # default tag is latest, -f is used to specify the dockerfile, location
+
+# Passing args while building an Image
+docker build -t apache:user -f Dockerfile4  --build-arg user=prasad --build-arg myarg=cool .
+
 docker network ls                                   # Network and Drivers list
 
 docker login                                        # Login to Docker Hub Account
