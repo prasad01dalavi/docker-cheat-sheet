@@ -85,3 +85,7 @@ docker image pull prasad01dalavi/flask-server       # Pull(download) the image l
 - RUN useradd: Adding new user
 - USER: Chaging User permissions
 - ARG: Provide arguments while building an image
+
+### Dockerfile5
+- fallocate: For creating/allocating the file size
+- multistaging: To reduce the image size
