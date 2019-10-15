@@ -62,6 +62,9 @@ docker build -t my_image2:my_tag -f Dockerfile2 .   # default tag is latest, -f 
 # Passing args while building an Image
 docker build -t apache:user -f Dockerfile4  --build-arg user=prasad --build-arg myarg=cool .
 
+# Bind Volume to container (Here its Mysql)
+docker run -d -v <docker_host_complete_path>:<container_mapping_path> -e "MYSQL_ROOT_PASSWORD=12345678" mysql:5.7
+
 docker network ls                                   # Network and Drivers list
 
 docker login                                        # Login to Docker Hub Account
