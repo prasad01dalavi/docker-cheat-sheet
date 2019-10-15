@@ -34,18 +34,22 @@ sudo docker info                                    # Get the Information about 
 sudo docker images                                  # List down the docker images
 docker images -f dangling=true                      # Filter dangling images
 docker images -f dangling=true -q                   # List the Image IDs of dangling images
-echo $(docker images -f dangling=true -q)           # list of images
+echo $(docker images -f dangling=true -q)           # list of images, -q for listing the IDs
 docker images | grep <search keyword>               # filter images by the keyword
 sudo docker ps                                      # List running containers
 sudo docker ps -a                                   # List down all containers with status
 
 sudo docker run <image_name/image_id>               # Run the docker image
+
+# Run the docker image (create container)
+docker run --name <container_name> -p <system_port>:<container_port> <image_name> 
+
 sudo docker rmi <image_id>                          # Remove the docker image (-f for forcefully delete)
 docker rm $(docker ps -a -q)                        # Remove all docker containers
 sudo docker run -it ubuntu                          # Start linux terminal interactive mode
 docker exec -it <cotainer_id> bash                  # Log In into container
 
-sudo docker start <image_id>                        # Start the container
+sudo docker start <cotainer_id/name>                # Start the container
 sudo docker start <first 2-digits of container_id>  # start the container
 
 sudo docker stats                                   # Memory, CPU etc Live Usage
