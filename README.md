@@ -32,6 +32,10 @@ sudo service docker start                           # To start the docker
 sudo service docker stop                            # To stop the docker
 sudo docker info                                    # Get the Information about the docker
 sudo docker images                                  # List down the docker images
+docker images -f dangling=true                      # Filter dangling images
+docker images -f dangling=true -q                   # List the Image IDs of dangling images
+echo $(docker images -f dangling=true -q)           # list of images
+docker images | grep <search keyword>               # filter images by the keyword
 sudo docker ps                                      # List running containers
 sudo docker ps -a                                   # List down all containers with status
 
