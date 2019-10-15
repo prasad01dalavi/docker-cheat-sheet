@@ -1,0 +1,23 @@
+FROM centos as build 
+
+# Create garbage file of 10MB
+RUN fallocate -l 10M /opt/1
+
+# Create garbage file of 10MB
+RUN fallocate -l 10M /opt/2
+
+# Create jar file to get it into the new images
+RUN fallocate -l 5M /opt/jar
+
+# Create garbage file of 10MB
+
+# Now lets use the centos as a build and get the contents of it
+FROM alpine
+
+# Lets copy the jar file(5MB) of centos to the alpine
+COPY --from=build /opt/jar /jarfile.jar
+
+# Now, The image size will be alpine image + 5 MB 
+# Here we used the centos image for building our multi-stage image
+# But we made the iamge size way lesser than the centos 
+# by using centos as a build for multi-staging
