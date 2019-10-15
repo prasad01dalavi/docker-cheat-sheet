@@ -65,6 +65,9 @@ docker build -t apache:user -f Dockerfile4  --build-arg user=prasad --build-arg 
 # Bind Volume to container (Here its Mysql)
 docker run -d -v <docker_host_complete_path>:<container_mapping_path> -e "MYSQL_ROOT_PASSWORD=12345678" mysql:5.7
 
+docker volume ls -f dangling=true                   # List dangling/orphans volumes
+
+
 docker network ls                                   # Network and Drivers list
 
 docker login                                        # Login to Docker Hub Account
