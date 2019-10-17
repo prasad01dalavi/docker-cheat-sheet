@@ -60,6 +60,9 @@ docker run -d --name nginx -p 9090:80 --memory 200mb --cpuset-cpus 2 nginx
 sudo docker system df                               # Disk Usage 
 sudo docker system prun                             # Delete Non running images
 sudo docker inspect <image_name/id>                 # Details of Image
+docker container inspect <container_id/name>        # Details of container, network etc
+docker exec -it <container> bash -c "ping IP"       # Ping the container ip 
+
 docker build -t my_image1:1.0 .                     # Buid the image from docker file with name Dockerfile
 docker build -t my_image2:my_tag -f Dockerfile2 .   # default tag is latest, -f is used to specify the dockerfile, location
 
@@ -71,8 +74,9 @@ docker run -d -v <docker_host_complete_path>:<container_mapping_path> -e "MYSQL_
 
 docker volume ls -f dangling=true                   # List dangling/orphans volumes
 
-
 docker network ls                                   # Network and Drivers list
+docker network inspect <network_name>               # Get the details of the network
+
 docker login                                        # Login to Docker Hub Account
 <new_image> = <username/image_name>                 # To push on dockerhub
 docker commit <container_id> <new_image>            # commit (save) the (new) image
