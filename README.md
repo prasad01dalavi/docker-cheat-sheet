@@ -77,6 +77,11 @@ docker volume ls -f dangling=true                   # List dangling/orphans volu
 docker network ls                                   # Network and Drivers list
 docker network inspect <network_name>               # Get the details of the network
 
+# Create and configure network
+docker network create -d bridge --subnet 192.168.0.0/16 --gateway 192.168.0.1 <network_name>
+
+docker network rm <network_name>                    # Remove network (default network e.g. bridge can not be removed)
+
 docker login                                        # Login to Docker Hub Account
 <new_image> = <username/image_name>                 # To push on dockerhub
 docker commit <container_id> <new_image>            # commit (save) the (new) image
