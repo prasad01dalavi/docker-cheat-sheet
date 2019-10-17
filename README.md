@@ -48,7 +48,7 @@ sudo docker rmi <image_id>                          # Remove the docker image (-
 docker rm $(docker ps -a -q)                        # Remove all docker containers
 sudo docker run -it ubuntu                          # Start linux terminal interactive mode
 docker exec -it <cotainer_id> bash                  # Log In into container
-
+docker cp apache:/var/www/html/copy.html .          # Copy file from container to dockerhost
 sudo docker start <cotainer_id/name>                # Start the container
 sudo docker start <first 2-digits of container_id>  # start the container
 
@@ -73,10 +73,10 @@ docker volume ls -f dangling=true                   # List dangling/orphans volu
 
 
 docker network ls                                   # Network and Drivers list
-
 docker login                                        # Login to Docker Hub Account
-docker commit <container_id> prasad01dalavi/flask-server  # commit (save) the (new) image
-docker push prasad01dalavi/flask-server             # Push the image on Docker Hub
+<new_image> = <username/image_name>                 # To push on dockerhub
+docker commit <container_id> <new_image>            # commit (save) the (new) image
+docker push <new_image>                             # Push the image on Docker Hub
 docker image pull prasad01dalavi/flask-server       # Pull(download) the image locally
 
 ```
