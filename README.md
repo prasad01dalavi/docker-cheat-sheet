@@ -53,6 +53,10 @@ sudo docker start <cotainer_id/name>                # Start the container
 sudo docker start <first 2-digits of container_id>  # start the container
 
 sudo docker stats                                   # Memory, CPU etc Live Usage
+
+# Allocate the memory and cpu count to container
+docker run -d --name nginx -p 9090:80 --memory 200mb --cpuset-cpus 2 nginx
+
 sudo docker system df                               # Disk Usage 
 sudo docker system prun                             # Delete Non running images
 sudo docker inspect <image_name/id>                 # Details of Image
