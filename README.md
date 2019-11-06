@@ -45,6 +45,7 @@ sudo docker run <image_name/image_id>               # Run the docker image
 docker run --name <container_name> -p <system_port>:<container_port> <image_name> 
 
 sudo docker rmi <image_id>                          # Remove the docker image (-f for forcefully delete)
+docker rmi <image:tag>                              # When have child images error
 docker rm $(docker ps -a -q)                        # Remove all docker containers
 sudo docker run -it ubuntu                          # Start linux terminal interactive mode
 docker exec -it <cotainer_id> bash                  # Log In into container
