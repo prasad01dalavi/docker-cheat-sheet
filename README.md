@@ -71,7 +71,7 @@ docker build -t my_image2:my_tag -f Dockerfile2 .   # default tag is latest, -f 
 docker build -t apache:user -f Dockerfile4  --build-arg user=prasad --build-arg myarg=cool .
 
 # Bind Volume to container (Here its Mysql)
-docker run -d -v <docker_host_complete_path>:<container_mapping_path> -e "MYSQL_ROOT_PASSWORD=12345678" mysql:5.7
+docker run -d -p 3307:3306 -v $PWD/mysql_data:/var/lib/mysql/ -e "MYSQL_ROOT_PASSWORD=<root_user_password>" mysql
 
 docker volume ls -f dangling=true                   # List dangling/orphans volumes
 
