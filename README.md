@@ -88,7 +88,7 @@ docker login                                        # Login to Docker Hub Accoun
 docker commit <container_id> <new_image>            # commit (save) the (new) image
 docker push <new_image>                             # Push the image on Docker Hub
 docker image pull prasad01dalavi/flask-server       # Pull(download) the image locally
-
+# --------------------------------------------------------------------------------------------------------------------------
 ```
 ### Dockerfile1
 - Simple Nginx Server which overwrite the contents of default index file
